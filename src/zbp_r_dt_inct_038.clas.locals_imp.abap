@@ -295,6 +295,11 @@ CLASS lhc_Incident IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD setDefaultHistory.
+** Execute internal action to update Flight Date
+    MODIFY ENTITIES OF zr_dt_inct_038 IN LOCAL MODE
+    ENTITY Incident
+    EXECUTE setHistory
+       FROM CORRESPONDING #( keys ).
   ENDMETHOD.
 
   METHOD get_history_index.
