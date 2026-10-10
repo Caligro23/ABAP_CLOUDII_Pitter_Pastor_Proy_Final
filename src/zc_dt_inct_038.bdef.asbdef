@@ -1,0 +1,28 @@
+projection implementation in class zbp_c_dt_inct_038 unique;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for ZC_DT_INCT_038 alias Incident
+{
+  use create;
+  use update;
+  use delete;
+
+  use action changeStatus;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+
+  use association _History { create; with draft; }
+}
+
+define behavior for ZC_DT_INCT_H_038 alias History
+{
+  // use update;
+  // use delete;
+
+  use association _Incident { with draft; }
+}

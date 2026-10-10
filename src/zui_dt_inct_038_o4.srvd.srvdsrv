@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Binding for incident APP'
+  }
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_DT_INCT_038'
+  }
+  }
+define service ZUI_DT_INCT_038_O4
+  provider contracts odata_v4_ui {
+  expose ZC_DT_INCT_038   as Incidents;
+  expose ZC_DT_INCT_H_038 as History;
+}
